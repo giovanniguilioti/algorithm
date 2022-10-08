@@ -1,29 +1,31 @@
 #include <stdlib.h>
 
-void ArrayTraversal(int* arr, int arrSize)
+void ArrayTraversal(int* arr, int arrsize, int lenght)
 {
-    size_t lenght = sizeof(arr)/sizeof(arr[0]);
-    if(arrSize < 0 || arrSize > lenght)
+    if(lenght <= 0)
+        return;
+    if(arrsize < 0 || arrsize > lenght)
         return;
 
-    for(size_t i = 0; i < arrSize; ++i)
+    for(int i = 0; i < arrSize; ++i)
     {
         /*process the data at arr[i];*/
     }
 }
 
-void ArrayTraversalInterval(int* arr, int begin, int end)
+void ArrayTraversalInterval(int* arr, int lenght, int begin, int end)
 {
+    if(lenght <= 0)
+        return;
     if(begin < 0 || end < 0)
         return;
     if(begin > end)
         return;
 
-    size_t lenght = sizeof(arr)/sizeof(arr[0]);
     if(begin > lenght || end > lenght)
         return;
     
-    for(size_t i = begin; i < end; ++i)
+    for(int i = begin; i < end; ++i)
     {
         /*process the data at arr[i];*/
     }

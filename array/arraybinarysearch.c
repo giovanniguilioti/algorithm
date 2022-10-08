@@ -1,12 +1,12 @@
 #include <stdlib.h>
 
-int ArrayBinarySearch(int* arr, int arrsize, int value)
+int ArrayBinarySearch(int* arr, int lenght, int value)
 {
-    if(arrsize <= 0)
+    if(lenght <= 0)
         return -1;
     
     int low = 0;
-    int high = arrsize - 1;
+    int high = lenght - 1;
 
     while(low <= high)
     {

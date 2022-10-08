@@ -1,8 +1,9 @@
 #include <stdlib.h>
 
-void ArrayDeleteBegin(int* arr)
+void ArrayDeleteBegin(int* arr, int lenght)
 {
-    size_t lenght = sizeof(arr)/sizeof(arr[0]);
+    if(lenght <= 0)
+        return;
 
     for(size_t i = 0; i < lenght-1 ; ++i)
     {
@@ -10,27 +11,30 @@ void ArrayDeleteBegin(int* arr)
     }
 }
 
-void ArrayDeleteAt(int* arr, int index)
+void ArrayDeleteAt(int* arr, int lenght, int index)
 {
-    size_t lenght = sizeof(arr)/sizeof(arr[0]);
+    if(lenght <= 0)
+        return;
+
     if(index < 0 || index >= lenght)
         return;
 
-    for(size_t i = index-1; i < lenght-1 ; ++i)
+    for(int i = index-1; i < lenght-1 ; ++i)
     {
         arr[i] = arr[i+1];
     }
 }
 
-int ArrayDeleteValue(int* arr, int value)
+int ArrayDeleteValue(int* arr, int lenght, int value)
 {
-    size_t lenght = sizeof(arr)/sizeof(arr[0]);
+    if(lenght <= 0)
+        return -1;
 
-    for(size_t i = 0; i < lenght-1 ; ++i)
+    for(int i = 0; i < lenght-1 ; ++i)
     {
         if(arr[i] == value)
         {
-            for(size_t j = i; j < lenght-1 ; ++j)
+            for(int j = i; j < lenght-1 ; ++j)
             {
                 arr[j] = arr[i+1];
             }
